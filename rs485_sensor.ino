@@ -7,7 +7,7 @@ SoftwareSerial mySerial(D6, D7); // RX, TX
 unsigned long lastSent = 0;
 uint period = 1000;
 
-byte temp_request[] = {0x02, 0x03, 0x00, 0x01, 0x00, 0x01, 0xd5, 0xca};
+byte temp_request[] = {0x01, 0x03, 0x00, 0x01, 0x00, 0x01, 0xff, 0xff};
 byte set_slave_id_request[] = {0x02, 0x06, 0x07, 0xD0, 0x00, 0x02, 0x08, 0x86};
 
 // Function to calculate the CRC
@@ -31,7 +31,7 @@ uint16_t calculateCRC(byte* data, uint8_t length) {
 
 byte temp_req_sz = 8;
 
-byte address = 2;
+byte address = 1;
 byte function_code = 3;
 byte state = 0;
 
